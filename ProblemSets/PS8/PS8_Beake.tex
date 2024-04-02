@@ -1,0 +1,176 @@
+\documentclass{article}
+
+% Language setting
+% Replace `english' with e.g. `spanish' to change the document language
+\usepackage[english]{babel}
+
+% Set page size and margins
+% Replace `letterpaper' with `a4paper' for UK/EU standard size
+\usepackage[letterpaper,top=2cm,bottom=2cm,left=3cm,right=3cm,marginparwidth=1.75cm]{geometry}
+
+% Useful packages
+\usepackage{amsmath}
+\usepackage{graphicx}
+\usepackage[colorlinks=true, allcolors=blue]{hyperref}
+
+\title{Problem Set 8}
+\author{Dillon Beake}
+
+\begin{document}
+\maketitle
+
+\section{Question 9: lm() Regression Table}
+\begin{table}[!htbp] \centering 
+  \caption{} 
+  \label{} 
+\begin{tabular}{@{\extracolsep{5pt}}lc} 
+\\[-1.8ex]\hline 
+\hline \\[-1.8ex] 
+ & \multicolumn{1}{c}{\textit{Dependent variable:}} \\ 
+\cline{2-2} 
+\\[-1.8ex] & Y \\ 
+\hline \\[-1.8ex] 
+ X1 & 1.501$^{***}$ \\ 
+  & (0.002) \\ 
+  & \\ 
+ X2 & $-$0.996$^{***}$ \\ 
+  & (0.002) \\ 
+  & \\ 
+ X3 & $-$0.249$^{***}$ \\ 
+  & (0.002) \\ 
+  & \\ 
+ X4 & 0.747$^{***}$ \\ 
+  & (0.002) \\ 
+  & \\ 
+ X5 & 3.502$^{***}$ \\ 
+  & (0.002) \\ 
+  & \\ 
+ X6 & $-$1.999$^{***}$ \\ 
+  & (0.002) \\ 
+  & \\ 
+ X7 & 0.501$^{***}$ \\ 
+  & (0.002) \\ 
+  & \\ 
+ X8 & 0.999$^{***}$ \\ 
+  & (0.002) \\ 
+  & \\ 
+ X9 & 1.253$^{***}$ \\ 
+  & (0.002) \\ 
+  & \\ 
+ X10 & 1.999$^{***}$ \\ 
+  & (0.002) \\ 
+  & \\ 
+\hline \\[-1.8ex] 
+Observations & 100,000 \\ 
+R$^{2}$ & 0.991 \\ 
+Adjusted R$^{2}$ & 0.991 \\ 
+Residual Std. Error & 0.500 (df = 99990) \\ 
+F Statistic & 1,080,712.000$^{***}$ (df = 10; 99990) \\ 
+\hline 
+\hline \\[-1.8ex] 
+\textit{Note:}  & \multicolumn{1}{r}{$^{*}$p$<$0.1; $^{**}$p$<$0.05; $^{***}$p$<$0.01} \\ 
+\end{tabular} 
+\end{table} 
+\subsection{}
+The True Betas and Estimated Betas are very similar, as you can see looking at the two tables there is a slight difference. 
+\begin{table}[htbp]
+\centering
+\caption{True Values of Beta}
+\begin{tabular}{cr}
+\hline
+Index & Value \\
+\hline
+1 & 1.5 \\
+2 & -1.0 \\
+3 & -0.25 \\
+4 & 0.75 \\
+5 & 3.5 \\
+6 & -2.0 \\
+7 & 0.5 \\
+8 & 1.0 \\
+9 & 1.25 \\
+10 & 2.0 \\
+\hline
+\end{tabular}
+\end{table}    
+\section{Question 5: OLS estimate - Closed Form Solution}
+
+\subsection{}
+
+Again, looking at the True Values of Beta in Table 2 and the estimated Beta Values in Table 3, there is only a slight difference.
+
+\begin{table}[htbp]
+\centering
+\caption{OLS Estimate (beta\_ols)}
+\begin{tabular}{cr}
+\hline
+Index & Value \\
+\hline
+1 & 1.5005793 \\
+2 & -0.9956182 \\
+3 & -0.2486498 \\
+4 & 0.7471903 \\
+5 & 3.5017669 \\
+6 & -1.9994365 \\
+7 & 0.5011339 \\
+8 & 0.9987400 \\
+9 & 1.2528300 \\
+10 & 1.9993846 \\
+\hline
+\end{tabular}
+\end{table}
+\section{Question 7: Compare Beta Estimates using  the  L-BFGS algorithm and Nelder-Mead
+algorithm.}
+
+\subsection{}
+The Beta Estimates generated using the L-BFGS Algorithm (Table 4) are also very similar to the true Beta Values (Table 2).
+
+\begin{table}[htbp]
+\centering
+\caption{L-BFGS Algorithm Estimates}
+\begin{tabular}{cr}
+\hline
+Index & Value \\
+\hline
+1 & 1.5005793 \\
+2 & -0.9956182 \\
+3 & -0.2486498 \\
+4 & 0.7471903 \\
+5 & 3.5017669 \\
+6 & -1.9994365 \\
+7 & 0.5011339 \\
+8 & 0.9987400 \\
+9 & 1.2528300 \\
+10 & 1.9993846 \\
+\hline
+\end{tabular}
+\end{table}
+
+\subsection{}
+The estimates from the Nelder-Mead algorithm are somewhat different from the true values of beta and the estimates obtained using other methods
+
+\begin{table}[htbp]
+\centering
+\caption{Nelder-Mead Algorithm Estimates}
+\begin{tabular}{cr}
+\hline
+Index & Value \\
+\hline
+1 & 0.9767063 \\
+2 & -0.9680386 \\
+3 & -0.1361704 \\
+4 & 1.1277353 \\
+5 & 3.2668671 \\
+6 & -2.1447235 \\
+7 & 0.5663044 \\
+8 & 1.0422382 \\
+9 & 1.4966523 \\
+10 & 2.3011765 \\
+\hline
+\end{tabular}
+\end{table}
+
+
+
+
+\end{document}
