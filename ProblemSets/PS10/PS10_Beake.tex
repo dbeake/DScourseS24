@@ -1,0 +1,48 @@
+\documentclass{article}
+
+% Language setting
+% Replace `english' with e.g. `spanish' to change the document language
+\usepackage[english]{babel}
+
+% Set page size and margins
+% Replace `letterpaper' with `a4paper' for UK/EU standard size
+\usepackage[letterpaper,top=2cm,bottom=2cm,left=3cm,right=3cm,marginparwidth=1.75cm]{geometry}
+
+% Useful packages
+\usepackage{amsmath}
+\usepackage{graphicx}
+\usepackage[colorlinks=true, allcolors=blue]{hyperref}
+\usepackage{booktabs}
+\usepackage{parskip}
+
+\title{Problem Set 10}
+\author{Dillon Beake}
+
+\begin{document}
+\maketitle
+
+
+\section{Model Performance Summary}
+\begin{table}[!htb]
+\caption{\label{tab:tab:model_summary}Model Performance Summary}
+\centering
+\begin{tabular}[t]{lrl}
+\toprule
+alg & accuracy & best\_params\\
+\midrule
+logit & 0.8526025 & lambda = 1e-10\\
+tree & 0.8684170 & min\_n = 10 , tree\_depth = 15 , cost\_complexity = 0.001\\
+nnet & 0.8347920 & hidden\_units = 1 , lambda = 1\\
+knn & 0.8433901 & neighbors = 30\\
+svm & 0.8638108 & cost = 13.6851686464717 , rbf\_sigma = 0.0777665905051034\\
+\bottomrule
+\end{tabular}
+\end{table}
+
+The DECISION TREE ALGORITHM achieved the highest accuracy performance for out-of-sample testing = 0.8684. NEURAL NETWORK ALGORITHM had the lowest, = 0.8348. When considering this range from highest to lowest, each algorithm performed fairly similarly.
+
+Also, I did tune the parameters of SVM using 10 iterations and 20 iterations. I got the same accuracy for both, so I kept the 20 iterations. I did not try 30 iterations because of the time it took for the first two, and also I was a bit worried about my computer's computing powers.
+
+The optimal hyper-parameters are also demonstrated by the table under the column (best-parameters).
+
+\end{document}
